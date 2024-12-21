@@ -34,6 +34,7 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
   const username = req.body.username;
   const msg = req.body.msg;
+  console.log(username, msg);
   const data = `${username}: ${msg}, `;
   console.log(data);
   fs.writeFile("messages.txt", data, { flag: "a" }, (err) => {
